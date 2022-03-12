@@ -1,0 +1,11 @@
+/lambda/
+/scripts
+/config
+/public
+.history
+*.test.js
+*.d.ts
+*.log
+*.zip
+*.txt
+.eslintrc.js
