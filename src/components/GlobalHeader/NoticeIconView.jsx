@@ -31,6 +31,7 @@ class GlobalHeaderRight extends Component {
 
   handleNoticeClear = (title, key) => {
     const { dispatch } = this.props;
+    
     message.success(`${'清空了'} ${title}`);
 
     if (dispatch) {
@@ -66,6 +67,7 @@ class GlobalHeaderRight extends Component {
           urgent: 'red',
           doing: 'gold',
         }[newNotice.status];
+
         newNotice.extra = (
           <Tag
             color={color}
@@ -85,6 +87,7 @@ class GlobalHeaderRight extends Component {
 
   getUnreadData = (noticeData) => {
     const unreadMsg = {};
+
     Object.keys(noticeData).forEach((key) => {
       const value = noticeData[key];
 
@@ -96,6 +99,7 @@ class GlobalHeaderRight extends Component {
         unreadMsg[key] = value.filter((item) => !item.read).length;
       }
     });
+
     return unreadMsg;
   };
 
