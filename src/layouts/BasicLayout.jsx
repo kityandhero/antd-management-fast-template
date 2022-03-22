@@ -128,6 +128,7 @@ const BasicLayout = (props) => {
           {children}
         </Authorized>
       </ProLayout>
+
       {checkDevelopment() ? (
         <SettingDrawer
           settings={settings}

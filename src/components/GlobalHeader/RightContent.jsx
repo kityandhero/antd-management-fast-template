@@ -48,9 +48,7 @@ const GlobalHeaderRight = (props) => {
             label: <a href="https://prolayout.ant.design/">Pro Layout</a>,
             value: 'Pro Layout',
           },
-        ]} // onSearch={value => {
-        //   //console.log('input', value);
-        // }}
+        ]}
       />
       <Tooltip title="使用文档">
         <a
