@@ -31,7 +31,7 @@ class GlobalHeaderRight extends Component {
 
   handleNoticeClear = (title, key) => {
     const { dispatch } = this.props;
-    
+
     message.success(`${'清空了'} ${title}`);
 
     if (dispatch) {
@@ -82,6 +82,7 @@ class GlobalHeaderRight extends Component {
 
       return newNotice;
     });
+
     return groupBy(newNotices, 'type');
   };
 
@@ -107,6 +108,7 @@ class GlobalHeaderRight extends Component {
     const { currentOperator, fetchingNotices, onNoticeVisibleChange } = this.props;
     const noticeData = this.getNoticeData();
     const unreadMsg = this.getUnreadData(noticeData);
+
     return (
       <NoticeIcon
         className={styles.action}
@@ -130,6 +132,7 @@ class GlobalHeaderRight extends Component {
           emptyText="你已查看所有通知"
           showViewMore
         />
+
         <NoticeIcon.Tab
           tabKey="message"
           count={unreadMsg.message}
@@ -138,6 +141,7 @@ class GlobalHeaderRight extends Component {
           emptyText="您已读完所有消息"
           showViewMore
         />
+
         <NoticeIcon.Tab
           tabKey="event"
           title="待办"
