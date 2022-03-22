@@ -105,7 +105,7 @@ class GlobalHeaderRight extends Component {
   };
 
   render() {
-    const { currentOperator, fetchingNotices, onNoticeVisibleChange } = this.props;
+    const { fetchingNotices, onNoticeVisibleChange } = this.props;
     const noticeData = this.getNoticeData();
     const unreadMsg = this.getUnreadData(noticeData);
 
