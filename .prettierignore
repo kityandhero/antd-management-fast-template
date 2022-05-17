@@ -1,34 +1,60 @@
+**/node_modules/**
+
+# fixtures
+**/fixtures/**
+
+# templates
+**/templates/**
+
+# husky
+**/.husky/**
+
+# vscode
+.vs/**
+
 **/*.svg
-package.json
-CNAME
-.ga
-.idea
-.umi
-.umi-production
-/dist
-/public
-.dockerignore
-.DS_Store
-.eslintignore
-.gitattributes
-.browserslistrc
-*.png
+**/dist
+**/lib
+**/es
+**/public
+
+# file
+*.lock
+*.swp
 *.jpg
 *.jpeg
 *.rar
+*.zip
+*.7z
 *.ico
+*.png
 *.gif
 *.toml
-docker
+*.md
+*.log
+*.min.js
+**/pnpm-lock.yaml
+
+LICENSE
+
+# config file
+babel.config.js
+.browserslistrc
+.eslintrc
 .editorconfig
-Dockerfile*
+.eslintignore
 .gitignore
 .prettierignore
-LICENSE
+.prettierrc
+.stylelintignore
 .eslintcache
-*.lock
-yarn-error.log
-.history
-*.log
-*.zip
-*.txt
+.czrc
+.gitattributes
+.npmrc
+
+# local special
+config
+project.config.json
+
+# local special
+**/libs/**

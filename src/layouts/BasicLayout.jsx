@@ -70,13 +70,7 @@ const BasicLayout = (props) => {
       setAccessWayCollectionCache(accessWayCollection);
       execBasicLayoutRemoteRequest(dispatch);
 
-      const getSettingType = 'settings/getSetting';
-
-      recordDebug(`modal access: ${getSettingType}`);
-
-      dispatch({
-        type: getSettingType,
-      });
+      
     }
   }, [dispatch]);
 
