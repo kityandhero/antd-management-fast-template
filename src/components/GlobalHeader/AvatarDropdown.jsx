@@ -3,8 +3,10 @@ import { connect, history } from 'umi';
 import { Avatar, Menu, Spin } from 'antd';
 import { ShopOutlined, SettingOutlined, LogoutOutlined } from '@ant-design/icons';
 
-import { checkHasAuthority } from 'antd-management-fast-framework/es/utils/authority';
+import { recordDebug } from 'antd-management-fast-framework/es/utils/tools';
 import { defaultUserAvatar } from 'antd-management-fast-framework/es/utils/constants';
+import { checkHasAuthority } from 'antd-management-fast-framework/es/utils/authority';
+
 import { accessWayCollection } from '@/customConfig/config';
 
 import HeaderDropdown from '../HeaderDropdown';
@@ -19,8 +21,12 @@ class AvatarDropdown extends React.Component {
       const { dispatch } = this.props;
 
       if (dispatch) {
+        const signOutType = 'entrance/signOut';
+
+        recordDebug(`modal access: ${signOutType}`);
+
         dispatch({
-          type: 'entrance/signOut',
+          type: signOutType,
         });
       }
 

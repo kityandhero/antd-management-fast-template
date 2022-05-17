@@ -3,7 +3,11 @@ import { Tag, message } from 'antd';
 import { connect } from 'umi';
 import groupBy from 'lodash/groupBy';
 import moment from 'moment';
+
+import { recordDebug } from 'antd-management-fast-framework/es/utils/tools';
+
 import NoticeIcon from '../NoticeIcon';
+
 import styles from './index.less';
 
 class GlobalHeaderRight extends Component {
@@ -11,8 +15,12 @@ class GlobalHeaderRight extends Component {
     const { dispatch } = this.props;
 
     if (dispatch) {
+      const type = 'global/fetchNotices';
+
+      recordDebug(`modal access: ${type}`);
+
       dispatch({
-        type: 'notice/singleList',
+        type,
       });
     }
   }
@@ -22,8 +30,12 @@ class GlobalHeaderRight extends Component {
     const { dispatch } = this.props;
 
     if (dispatch) {
+      const changeNoticeReadStateType = 'global/changeNoticeReadState';
+
+      recordDebug(`modal access: ${changeNoticeReadStateType}`);
+
       dispatch({
-        type: 'notice/changeNoticeReadState',
+        type: changeNoticeReadStateType,
         payload: id,
       });
     }
@@ -35,8 +47,12 @@ class GlobalHeaderRight extends Component {
     message.success(`${'清空了'} ${title}`);
 
     if (dispatch) {
+      const clearNoticesType = 'global/clearNotices';
+
+      recordDebug(`modal access: ${clearNoticesType}`);
+
       dispatch({
-        type: 'notice/clearNotices',
+        type: clearNoticesType,
         payload: key,
       });
     }
