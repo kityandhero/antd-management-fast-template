@@ -61,6 +61,8 @@ class AvatarDropdown extends React.Component {
       </Menu>
     );
 
+    console.log(currentOperator);
+
     return currentOperator != null ? (
       <HeaderDropdown overlay={menuHeaderDropdown}>
         <span className={`${styles.action} ${styles.account}`}>
