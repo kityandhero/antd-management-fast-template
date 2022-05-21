@@ -1,17 +1,15 @@
-import React from 'react';
+import { defaultSettings } from '@/defaultSettings';
 import {
   DashboardOutlined,
+  ReconciliationOutlined,
   ShopOutlined,
   ShoppingCartOutlined,
-  ReconciliationOutlined,
   TeamOutlined,
 } from '@ant-design/icons';
-
-import { stringIsNullOrWhiteSpace } from 'antd-management-fast-framework/es/utils/tools';
-import IconInfo from 'antd-management-fast-framework/es/customComponents/IconInfo';
 import { buildMenuHeaderRender } from 'antd-management-fast-framework/es/customComponents/FunctionComponent';
-
-import { defaultSettings } from '@/defaultSettings';
+import IconInfo from 'antd-management-fast-framework/es/customComponents/IconInfo';
+import { stringIsNullOrWhiteSpace } from 'antd-management-fast-framework/es/utils/tools';
+import React from 'react';
 
 export const defaultFooterData = {
   copyright: defaultSettings.getCopyright(),
