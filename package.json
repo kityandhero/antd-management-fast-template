@@ -11,6 +11,7 @@
   "license": "MIT",
   "main": "src/index.ts",
   "scripts": {
+    "prepare": "husky install",
     "postinstall": "umi g tmp",
     "analyze-dev": "cross-env ANALYZE=1 umi dev",
     "analyze-build": "cross-env ANALYZE=1 umi build",
