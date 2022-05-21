@@ -4,6 +4,11 @@ import { message } from 'antd';
 import { queryStringify } from 'antd-management-fast-framework/es/utils/tools';
 import { pretreatmentRemoteSingleData } from 'antd-management-fast-framework/es/utils/requestAssistor';
 import {
+  reducerCommonCollection,
+  reducerCommonNameCollection,
+  tacitlyState,
+} from 'antd-management-fast-framework/es/utils/dva';
+import {
   setToken,
   clearCustomData,
 } from 'antd-management-fast-framework/es/utils/globalStorageAssist';
@@ -84,6 +89,7 @@ export default {
   },
 
   reducers: {
+    ...reducerCommonCollection,
     changeLoginStatus(state, { payload }) {
       const d = payload;
       const v = pretreatmentRemoteSingleData(d);
@@ -100,6 +106,5 @@ export default {
         status: code,
       };
     },
-    ...reducerCommonCollection,
   },
 };
