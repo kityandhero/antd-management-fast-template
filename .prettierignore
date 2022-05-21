@@ -9,6 +9,9 @@
 # husky
 **/.husky/**
 
+# umi
+**/.umi/**
+
 # vscode
 .vs/**
 
@@ -19,6 +22,7 @@
 **/public
 
 # file
+*.txt
 *.lock
 *.swp
 *.jpg

@@ -69,8 +69,6 @@ const BasicLayout = (props) => {
     if (dispatch) {
       setAccessWayCollectionCache(accessWayCollection);
       execBasicLayoutRemoteRequest(dispatch);
-
-      
     }
   }, [dispatch]);
 
