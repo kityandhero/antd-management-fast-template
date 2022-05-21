@@ -20,7 +20,10 @@ export default {
   namespace: 'entrance',
 
   state: {
-    status: undefined,
+    ...tacitlyState,
+    ...{
+      status: undefined,
+    },
   },
 
   effects: {
@@ -97,5 +100,6 @@ export default {
         status: code,
       };
     },
+    ...reducerCommonCollection,
   },
 };

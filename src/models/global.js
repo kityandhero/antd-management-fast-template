@@ -14,6 +14,7 @@ const GlobalModel = {
   namespace: 'global',
 
   state: {
+    ...tacitlyState,
     ...(modelCollection || {}),
     ...{
       collapsed: false,
@@ -81,9 +82,6 @@ const GlobalModel = {
   },
 
   reducers: {
-    handleCommonData(state, action) {
-      return handleCommonDataAssist(state, action);
-    },
     changeMetaData(state, { payload }) {
       return {
         ...state,
@@ -131,6 +129,7 @@ const GlobalModel = {
         areaDistributionTempData: payload,
       };
     },
+    ...reducerCommonCollection,
   },
 
   subscriptions: {
