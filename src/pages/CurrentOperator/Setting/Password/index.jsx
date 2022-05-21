@@ -1,9 +1,7 @@
-import { connect } from 'umi';
-
-import { showError } from 'antd-management-fast-framework/es/utils/tools';
-import { cardConfig } from 'antd-management-fast-framework/es/utils/constants';
 import BaseUpdateFormContent from 'antd-management-fast-framework/es/framework/DataForm/BaseUpdateFormContent';
-
+import { cardConfig } from 'antd-management-fast-framework/es/utils/constants';
+import { showError } from 'antd-management-fast-framework/es/utils/tools';
+import { connect } from 'umi';
 import { fieldData } from '../../Common/data';
 
 @connect(({ currentOperator, loading }) => ({
@@ -90,8 +88,6 @@ class Password extends BaseUpdateFormContent {
   }) => {};
 
   establishCardCollectionConfig = () => {
-    const { processing, dataLoading } = this.state;
-
     const spinning = this.checkInProgress();
 
     return {

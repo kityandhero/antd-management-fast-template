@@ -1,23 +1,17 @@
-import { history } from 'umi';
-import { message } from 'antd';
-
-import { queryStringify } from 'antd-management-fast-framework/es/utils/tools';
-import { pretreatmentRemoteSingleData } from 'antd-management-fast-framework/es/utils/requestAssistor';
-import {
-  reducerCommonCollection,
-  reducerCommonNameCollection,
-  tacitlyState,
-} from 'antd-management-fast-framework/es/utils/dva';
-import {
-  setToken,
-  clearCustomData,
-} from 'antd-management-fast-framework/es/utils/globalStorageAssist';
-import { getPageQuery } from 'antd-management-fast-framework/es/utils/utils';
-import { setAuthority } from 'antd-management-fast-framework/es/utils/authority';
-
-import { setDataFlag } from '@/utils/storageAssist';
-import { signInData, getCaptcha } from '@/services/entrance';
 import { defaultSettings } from '@/defaultSettings';
+import { getCaptcha, signInData } from '@/services/entrance';
+import { setDataFlag } from '@/utils/storageAssist';
+import { message } from 'antd';
+import { setAuthority } from 'antd-management-fast-framework/es/utils/authority';
+import { reducerCommonCollection, tacitlyState } from 'antd-management-fast-framework/es/utils/dva';
+import {
+  clearCustomData,
+  setToken,
+} from 'antd-management-fast-framework/es/utils/globalStorageAssist';
+import { pretreatmentRemoteSingleData } from 'antd-management-fast-framework/es/utils/requestAssistor';
+import { queryStringify } from 'antd-management-fast-framework/es/utils/tools';
+import { getPageQuery } from 'antd-management-fast-framework/es/utils/utils';
+import { history } from 'umi';
 
 const entrancePath = defaultSettings.getEntrancePath();
 
