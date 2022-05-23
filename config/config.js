@@ -5,7 +5,7 @@ import pageRoutes from './router.config';
 const config = buildConfig({
   routes: pageRoutes,
   headerExtraLinks: ['/home.css'],
-  mfsu: false,
+  mfsu: true,
 });
 
 export default config;
