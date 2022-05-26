@@ -6,8 +6,10 @@
 /src/utils/request-temp.js
 _roadhog-api-doc
 
-# production
+# dev
 /dist
+/temp
+/.vscode
 /.history
 
 # misc
@@ -17,9 +19,10 @@ yarn-error.log
 
 /coverage
 .idea
-./yarn.lock
-./package-lock.json
+yarn.lock
+package-lock.json
 *bak
+.vscode
 
 # visual studio code
 .history
@@ -38,5 +41,5 @@ screenshot
 .eslintcache
 
 build
-/node_modules
-/pnpm-lock.yaml
+
+pnpm-lock.yaml
