@@ -68,7 +68,8 @@
   "dependencies": {},
   "devDependencies": {},
   "optionalDependencies": {
-    "puppeteer": "^14.1.1"
+    "antd-management-fast-framework": "^1.12.52",
+    "antd-management-fast-cli": "^1.0.18"
   },
   "engines": {
     "node": ">=14.0.0"
