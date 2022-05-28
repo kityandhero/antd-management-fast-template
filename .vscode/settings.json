@@ -6,6 +6,8 @@
     "pageview",
     "pnpm",
     "precommit",
+    "randomcolor",
+    "redbox",
     "serviceworker",
     "tinymce"
   ]
