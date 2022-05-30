@@ -232,8 +232,8 @@
     "umi-plugin-custom-extra": "^1.0.12"
   },
   "optionalDependencies": {
-    "antd-management-fast-cli": "^1.0.19",
-    "antd-management-fast-framework": "^1.12.62"
+    "antd-management-fast-cli": "^1.0.20",
+    "antd-management-fast-framework": "^1.12.63"
   },
   "engines": {
     "node": ">=14.0.0"
