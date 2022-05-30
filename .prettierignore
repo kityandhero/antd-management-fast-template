@@ -60,7 +60,6 @@ babel.config.js
 .npmrc
 
 # local special
-config
 project.config.json
 
 # local special
