@@ -53,24 +53,7 @@ const EntranceLayout = (props) => {
             }}
           >
             <div className={styles.content}>
-              <div className={styles.top}>
-                <div className={styles.header}>
-                  <Link to="#">
-                    {defaultSettings.getShowLogoInEntrance() ? (
-                      <img
-                        alt="logo"
-                        className={styles.logo}
-                        src={defaultSettings.getShareLogo()}
-                      />
-                    ) : null}
-                    <span className={styles.title}>
-                      {defaultSettings.getAppName() || '未设置名称'}
-                    </span>
-                  </Link>
-                </div>
-                <div className={styles.desc}>{defaultSettings.getAppDescription() || ''}</div>
-                {children}
-              </div>
+              <div className={styles.top}>{children}</div>
             </div>
           </VerticalBox>
         }
