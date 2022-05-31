@@ -3,7 +3,7 @@ import { accessWayCollection } from '../src/customConfig/accessWayCollection';
 export default [
   {
     path: '/entrance',
-    component: '../layouts/UserLayout',
+    component: '../layouts/EntranceLayout',
     routes: [
       { path: '/entrance', redirect: '/entrance/signIn' },
       { path: '/entrance/signIn', component: './Entrance' },

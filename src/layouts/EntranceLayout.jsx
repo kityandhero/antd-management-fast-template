@@ -7,9 +7,9 @@ import VerticalBox from 'antd-management-fast-framework/es/customComponents/Vert
 import React from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { connect, Link } from 'umi';
-import styles from './UserLayout.less';
+import styles from './EntranceLayout.less';
 
-const UserLayout = (props) => {
+const EntranceLayout = (props) => {
   const {
     route = {
       routes: [],
@@ -98,4 +98,4 @@ const UserLayout = (props) => {
   );
 };
 
-export default connect(({ settings }) => ({ ...settings }))(UserLayout);
+export default connect(({ settings }) => ({ ...settings }))(EntranceLayout);
