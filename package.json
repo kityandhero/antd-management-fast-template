@@ -233,7 +233,7 @@
   },
   "optionalDependencies": {
     "antd-management-fast-cli": "^1.0.20",
-    "antd-management-fast-framework": "^1.12.70"
+    "antd-management-fast-framework": "^1.12.71"
   },
   "engines": {
     "node": ">=14.0.0"
