@@ -48,10 +48,7 @@ class AvatarDropdown extends React.Component {
 
         {menuItems.length > 0 ? <Menu.Divider /> : null}
 
-        <Menu.Item key="signOut">
-          <LogoutOutlined />
-          退出登录
-        </Menu.Item>
+        <Menu.Item key="signOut">iconCollection.logout 退出登录</Menu.Item>
       </Menu>
     );
 
