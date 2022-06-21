@@ -1,15 +1,17 @@
-import { defaultSettings } from '@/defaultSettings';
 import {
   DashboardOutlined,
   ReconciliationOutlined,
   ShopOutlined,
   ShoppingCartOutlined,
-  TeamOutlined,
 } from '@ant-design/icons';
+import React from 'react';
+
 import { buildMenuHeaderRender } from 'antd-management-fast-framework/es/customComponents/FunctionComponent';
 import IconInfo from 'antd-management-fast-framework/es/customComponents/IconInfo';
 import { stringIsNullOrWhiteSpace } from 'antd-management-fast-framework/es/utils/tools';
-import React from 'react';
+import { iconCollection } from 'antd-management-fast-framework/es/utils/constants';
+
+import { defaultSettings } from '@/defaultSettings';
 
 export const defaultFooterData = {
   copyright: defaultSettings.getCopyright(),
@@ -40,7 +42,7 @@ export const defaultFooterData = {
     },
     {
       key: 'user',
-      title: <IconInfo icon={<TeamOutlined />} text="个人中心" />,
+      title: <IconInfo icon={iconCollection.team} text="个人中心" />,
       href: '/#/person/listRegUser',
       blankTarget: false,
     },
