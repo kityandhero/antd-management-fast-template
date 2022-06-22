@@ -2,7 +2,10 @@ import { Avatar, Menu, Spin } from 'antd';
 import React from 'react';
 import { connect } from 'umi';
 
-import { defaultUserAvatar } from 'antd-management-fast-framework/es/utils/constants';
+import {
+  defaultUserAvatar,
+  iconCollection,
+} from 'antd-management-fast-framework/es/utils/constants';
 import { goToPath, recordDebug } from 'antd-management-fast-framework/es/utils/tools';
 
 import HeaderDropdown from '../HeaderDropdown';
@@ -37,24 +40,17 @@ class AvatarDropdown extends React.Component {
       currentOperator: { currentOperator = null },
     } = this.props;
 
-    const menuItems = [];
+    const items = [
+      {
+        key: 'signOut',
+        label: '退出登录',
+        icon: iconCollection.logout,
+      },
+    ];
 
     const menuHeaderDropdown = (
-      <Menu className={styles.menu} selectedKeys={[]} onClick={this.onMenuClick}>
-        {menuItems.map((o) => (
-          <Menu.Item key={o.key}>
-            {o.icon}
-            {o.text}
-          </Menu.Item>
-        ))}
-
-        {menuItems.length > 0 ? <Menu.Divider /> : null}
-
-        <Menu.Item key="signOut">iconCollection.logout 退出登录</Menu.Item>
-      </Menu>
+      <Menu className={styles.menu} selectedKeys={[]} items={items} onClick={this.onMenuClick} />
     );
-
-    console.log(currentOperator);
 
     return currentOperator != null ? (
       <HeaderDropdown overlay={menuHeaderDropdown}>
