@@ -5,12 +5,12 @@ import { headScripts as headScriptsSource } from './extraScript';
 const corsTargetDomain = '';
 
 const headScripts = [
+  ...headScriptsSource,
   ...[
     {
       src: `${corsTargetDomain}/interactionConfig/initRemote.js`,
     },
   ],
-  ...headScriptsSource,
 ];
 
 export default defineConfig({
