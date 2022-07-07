@@ -1,9 +1,10 @@
 {
-  "name": "antd-management-fast-framework",
-  "version": "1.12.81",
-  "description": "antd-management-fast-framework",
+  "name": "simple-antd-management-fast-framework",
+  "version": "1.7.91",
+  "private": true,
+  "description": "simple-antd-management-fast-framework",
   "keywords": [
-    "antd-management-fast-framework"
+    "simple-antd-management-fast-framework"
   ],
   "homepage": "https://github.com/kityandhero/antd-management-fast-framework.git",
   "bugs": {
@@ -15,33 +16,46 @@
   },
   "license": "MIT",
   "author": "kityandhero <kityandhero@126.com>",
-  "main": "lib/index.js",
-  "directories": {
-    "lib": "lib",
-    "test": "test",
-    "es": "lib"
-  },
-  "files": [
-    "es"
-  ],
+  "main": "src/index.ts",
   "scripts": {
     "adjust-install": "cnpm install postcss-less",
-    "build": "rimraf ./src/**/*.d.ts && rimraf ./lib && rimraf ./es && tsc -p . && father-build && rimraf ./src/**/*.d.ts",
+    "analyze-build": "cross-env ANALYZE=1 umi build",
+    "analyze-dev": "cross-env ANALYZE=1 umi dev",
+    "build": "cross-env UMI_ENV=production umi build",
     "clean-file": "rimraf ./src/.umi && rimraf ./node_modules",
-    "delete:dts": "rimraf ./src/**/*.d.ts",
+    "deploy": "npm run site && npm run gh-pages",
+    "dev": "npm run start:dev",
+    "docker-hub:build": "docker build  -f Dockerfile.hub -t  ant-design-pro ./",
+    "docker-prod:build": "docker-compose -f ./docker/docker-compose.yml build",
+    "docker-prod:dev": "docker-compose -f ./docker/docker-compose.yml up",
+    "docker:build": "docker-compose -f ./docker/docker-compose.dev.yml build",
+    "docker:dev": "docker-compose -f ./docker/docker-compose.dev.yml up",
+    "docker:push": "npm run docker-hub:build && npm run docker:tag && docker push antdesign/ant-design-pro",
+    "docker:tag": "docker tag ant-design-pro antdesign/ant-design-pro",
+    "fetch:blocks": "pro fetch-blocks --branch=umi@3 && npm run prettier",
+    "gh-pages": "cp CNAME ./dist/ && gh-pages -d dist",
+    "i18n-remove": "pro i18n-remove --locale=zh-CN --write",
+    "init:start": "umi g tmp",
     "lint": "umi g tmp && npm run lint:js && npm run lint:style && npm run lint:prettier",
     "lint-staged": "lint-staged",
     "lint-staged:js": "eslint --ext .js,.jsx,.ts,.tsx ",
     "lint:fix": "eslint --fix --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src && npm run lint:style",
     "lint:js": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src",
     "lint:prettier": "prettier --check \"**/*\" --end-of-line auto",
-    "lint:style": "stylelint --fix \"./src/**/*.less\"",
+    "lint:style": "stylelint --fix \"src/**/*.less\"",
     "precommit": "lint-staged",
     "prettier": "prettier -c --write \"**/*\"",
-    "test": "umi-test",
-    "test:coverage": "umi-test --coverage",
-    "test:update": "umi-test --updateSnapshot",
-    "v:p": "npm version patch && npm publish"
+    "site": "npm run fetch:blocks && npm run build",
+    "start": "cross-env PORT=8841 UMI_UI=none UMI_ENV=development umi dev",
+    "start:no-mock": "cross-env PORT=8841 MOCK=none UMI_ENV=development umi dev",
+    "start:pre": "cross-env PORT=8841 REACT_APP_ENV=pre UMI_ENV=development umi dev",
+    "start:test": "cross-env PORT=8841 REACT_APP_ENV=test MOCK=none UMI_ENV=development umi dev",
+    "start:ui": "cross-env PORT=8841 UMI_ENV=development umi dev",
+    "pretest": "node ./tests/beforeTest",
+    "test": "umi test",
+    "test:all": "node ./tests/run-tests.js",
+    "test:component": "umi test ./src/components",
+    "tsc": "tsc"
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
@@ -53,6 +67,7 @@
     "@babel/preset-typescript": "^7.17.12",
     "@tinymce/tinymce-react": "^4.1.0",
     "antd": "^4.21.3",
+    "antd-management-fast-framework": "^1.12.92",
     "array-move": "^4.0.0",
     "bizcharts": "^4.1.19",
     "browserslist": "^4.21.0",
@@ -142,6 +157,7 @@
     "@types/react": "^18.0.14",
     "@types/react-document-title": "^2.0.5",
     "@types/react-helmet": "^6.1.5",
+    "@types/react-syntax-highlighter": "^15.5.2",
     "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "^5.29.0",
     "@umijs/fabric": "^2.12.0",
@@ -176,15 +192,12 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.30.0",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
     "eslint-plugin-unicorn": "^42.0.0",
     "express": "^4.18.1",
     "father-build": "^1.22.3",
     "gh-pages": "^4.0.0",
     "husky": "^8.0.1",
-    "import-sort-cli": "^6.0.0",
-    "import-sort-parser-babylon": "^6.0.0",
-    "import-sort-parser-typescript": "^6.0.0",
-    "import-sort-style-module": "^6.0.0",
     "inquirer": "^8.2.4",
     "jest-puppeteer": "^6.1.0",
     "jsdom": "^20.0.0",
@@ -213,16 +226,8 @@
     "umi": "^3.5.26",
     "umi-plugin-custom-extra": "^1.0.12"
   },
-  "filesOther": [
-    "es",
-    "lib",
-    "src/configGroup",
-    "src/customComponents",
-    "src/framework",
-    "src/utils"
-  ],
-  "gitHead": "a2c9212a8ddfbdd423f088be00d92785020053cb",
-  "gitHooks": {
-    "pre-commit": "lint-staged"
-  }
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "gitHead": "bff59dd6f73f7876bf07eddc292fdc8ee7048059"
 }

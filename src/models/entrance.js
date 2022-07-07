@@ -1,7 +1,6 @@
-import { defaultSettings } from '@/defaultSettings';
-import { getCaptcha, signInData } from '@/services/entrance';
-import { setDataFlag } from '@/utils/storageAssist';
 import { message } from 'antd';
+import { history } from 'umi';
+
 import { setAuthority } from 'antd-management-fast-framework/es/utils/authority';
 import { reducerCommonCollection, tacitlyState } from 'antd-management-fast-framework/es/utils/dva';
 import {
@@ -11,7 +10,10 @@ import {
 import { pretreatmentRemoteSingleData } from 'antd-management-fast-framework/es/utils/requestAssistor';
 import { queryStringify } from 'antd-management-fast-framework/es/utils/tools';
 import { getPageQuery } from 'antd-management-fast-framework/es/utils/utils';
-import { history } from 'umi';
+
+import { defaultSettings } from '@/defaultSettings';
+import { getCaptcha, signInData } from '@/services/entrance';
+import { setDataFlag } from '@/utils/storageAssist';
 
 const entrancePath = defaultSettings.getEntrancePath();
 

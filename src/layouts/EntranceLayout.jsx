@@ -1,12 +1,14 @@
-import { defaultSettings } from '@/defaultSettings';
-import { formatMessage } from '@/utils/tools';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { connect } from 'umi';
 import { DefaultFooter, getMenuData, getPageTitle } from '@ant-design/pro-layout';
+
 import Bubbly from 'antd-management-fast-framework/es/customComponents/Canvas/Bubbly';
 import FlexBox from 'antd-management-fast-framework/es/customComponents/FlexBox';
 import VerticalBox from 'antd-management-fast-framework/es/customComponents/VerticalBox';
-import React from 'react';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
-import { connect, Link } from 'umi';
+
+import { defaultSettings } from '@/defaultSettings';
+import { formatMessage } from '@/utils/tools';
+
 import styles from './EntranceLayout.less';
 
 const EntranceLayout = (props) => {

@@ -1,9 +1,10 @@
 module.exports = {
-  extends: [require.resolve('@umijs/fabric/dist/eslint')],
+  extends: [require.resolve('@umijs/fabric/dist/eslint'), 'plugin:react/jsx-runtime'],
   globals: {
     page: true,
     REACT_APP_ENV: true,
   },
+  plugins: ['simple-import-sort', 'import', 'prettier'],
   rules: {
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     'react/jsx-wrap-multilines': 0,
@@ -11,6 +12,7 @@ module.exports = {
     'react/forbid-prop-types': 0,
     'react/jsx-one-expression-per-line': 0,
     'react/jsx-props-no-spreading': 0,
+    'jsx-a11y/no-noninteractive-element-interactions': 0,
     'jsx-a11y/click-events-have-key-events': 0,
     'jsx-a11y/no-static-element-interactions': 0,
     'jsx-a11y/anchor-is-valid': 0,
@@ -25,6 +27,26 @@ module.exports = {
     '@typescript-eslint/no-this-alias': ['off'],
     '@typescript-eslint/no-unused-vars': 1,
     '@typescript-eslint/no-invalid-this': 0,
+    'sort-imports': 0,
+    'simple-import-sort/imports': [
+      'error',
+      {
+        groups: [
+          ['^(?!antd-management-fast-framework)[a-zA-Z0-9]', '^@(?!/)'],
+          ['^(?!@/)(?!antd-management-fast-framework)(?!.)'],
+          ['^antd-management-fast-framework'],
+          ['^((@/).*|$)'],
+          ['^\\u0000'],
+          ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
+          ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
+          ['^.+\\.s?less$', '^.+\\.s?scss$', '^.+\\.s?css$'],
+        ],
+      },
+    ],
+    'simple-import-sort/exports': 'error',
+    'import/first': 'error',
+    'import/newline-after-import': 'error',
+    'import/no-duplicates': 'error',
   },
   settings: {
     react: {

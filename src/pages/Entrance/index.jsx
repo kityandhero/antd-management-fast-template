@@ -1,14 +1,14 @@
-import React, { PureComponent } from 'react';
-import { connect } from 'umi';
 import { Button } from 'antd';
+import { PureComponent } from 'react';
+import { connect } from 'umi';
 import { LoginForm, ProFormText } from '@ant-design/pro-components';
 
 import IconInfo from 'antd-management-fast-framework/es/customComponents/IconInfo';
 import { iconCollection } from 'antd-management-fast-framework/es/utils/constants';
 
-import { signInAction } from './Assist/action';
-
 import { defaultSettings } from '@/defaultSettings';
+
+import { signInAction } from './Assist/action';
 
 @connect(({ entrance, global }) => ({
   entrance,
