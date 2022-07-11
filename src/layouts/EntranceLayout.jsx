@@ -42,7 +42,7 @@ const EntranceLayout = (props) => {
       </Helmet>
 
       <FlexBox
-        direction="vertical"
+        flexAuto="top"
         vertical={{
           bottomHeight: '180rpx',
         }}
